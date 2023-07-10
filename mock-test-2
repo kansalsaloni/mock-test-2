@@ -1,0 +1,36 @@
+Q1. . DOM Manipulation: Create a page with a square box of size 300x300 on the page which will be red initially, upon clicking the red box it should change the color to yellow and the size should be doubled
+
+index.html file
+----------------
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div id="box" class="red-box"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+Stles.css file
+--------------
+.red-box {
+  width: 300px;
+  height: 300px;
+  background-color: red;
+  cursor: pointer;
+}
+.yellow-box {
+  background-color: yellow;
+}
+script.js file
+---------------
+const box = document.getElementById('box');
+
+box.addEventListener('click', function() {
+  box.classList.toggle('yellow-box');
+  box.style.width = (box.offsetWidth * 2) + 'px';
+  box.style.height = (box.offsetHeight * 2) + 'px';
+});
